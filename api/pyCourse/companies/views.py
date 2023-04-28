@@ -7,10 +7,9 @@ from django.shortcuts import render
 
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.viewsets import ModelViewSet
-# from api.pyCourse.companies.models import Company
-from .models import Company
-from .serializers import CompanySerializer
-# from api.pyCourse.companies.serializers import CompanySerializer
+from companies.models import Company
+from companies.serializers import CompanySerializer
+
 
 
 class CompanyViewSet(ModelViewSet):
@@ -40,19 +39,5 @@ class CompanyViewSet(ModelViewSet):
 #     )
 
 
-"""
-Notes:
-(1) here we write the serializer class name from serializers.py.
-(2) queryset is what do we want to return. We want to return all the 
-companies. Companies.objects.all() is Django Object Relational Mapper(ORM).
-It is a way to talk to SQLite3 database instead of making SQL query. 
-It is an object oriented obstruction of our database. 
 
-Companies.objects.all() = SELECT * from Company
-
-Then we order them by last update.
-
-(3) we create pages numbers so that our Server is working fast. 
-This is done so that we don't get timeout as only part of the pages are received at a time. 
-"""
 

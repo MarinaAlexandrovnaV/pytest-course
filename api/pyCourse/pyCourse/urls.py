@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# from api.pyCourse.companies.urls import companies_router
 from companies.urls import companies_router
 
 urlpatterns = [
